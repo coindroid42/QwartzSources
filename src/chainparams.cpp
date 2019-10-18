@@ -285,7 +285,7 @@ public:
         consensus.nGovernanceMinQuorum = 1;
         consensus.nGovernanceFilterElements = 500;
         consensus.nMasternodeMinimumConfirmations = 1;
-        consensus.BIP34Height = 0;
+        consensus.BIP34Height = 10000;
         consensus.BIP34Hash = uint256S("0x0000049f3eef5f1bf93ac309ed7c807878566d88c4f7b6a4c460a99466eeb57d");
         consensus.BIP65Height = 0; 
         consensus.BIP66Height = 0; 
