@@ -123,8 +123,8 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 225000; 
-        consensus.nMasternodePaymentsStartBlock = 10; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
+        consensus.nSubsidyHalvingInterval = 225000999; 
+        consensus.nMasternodePaymentsStartBlock = 10000; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
         consensus.nMasternodePaymentsIncreaseBlock = 158000; // actual historical value
         consensus.nMasternodePaymentsIncreasePeriod = 576*30; // 17280 - actual historical value
         consensus.nInstantSendConfirmationsRequired = 6;
@@ -196,16 +196,36 @@ public:
 
      genesis = CreateGenesisBlock(1571417936, 392226, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-
+        // calculate main genesis block
+        consensus.hashGenesisBlock = uint256S("0x00");
+        if (true && (genesis.GetHash() != consensus.hashGenesisBlock)) {
+		std::cout << std::string("Calculating main genesis block...\n");
+            arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
+            uint256 hash;
+            genesis.nNonce = 0;
+            while (UintToArith256(genesis.GetHash()) > hashTarget)
+            {
+                ++genesis.nNonce;
+                if (genesis.nNonce == 0)
+                {
+                    ++genesis.nTime;
+                }
+            }
+            std::cout << "Genesis block found!\n";
+            std::cout << "nonce: " << genesis.nNonce << "\n";
+            std::cout << "time: " << genesis.nTime << "\n";
+            std::cout << "blockhash: " << genesis.GetHash().ToString().c_str() << "\n";
+            std::cout << "merklehash: " << genesis.hashMerkleRoot.ToString().c_str() << "\n";
+        }
         assert(consensus.hashGenesisBlock == uint256S("0x00000b1cbac4fec906043321181e2d5ec49ac01e8872fa8a0e3c8f66742dc82c"));
         assert(genesis.hashMerkleRoot == uint256S("0xfe4a1d6ca2e93f9aa9d3f86a799fa3b52b5b39a69e984c7dae8e909343c75009"));
 
 
       //  vSeeds.push_back(CDNSSeedData("walletbuilders.com", "node1.walletbuilders.com"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,58);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,59);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,186);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,17);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,156);
         // Qwartz BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         // Qwartz BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
@@ -226,7 +246,7 @@ public:
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
 
-        strSporkAddress = "QZgtce5SnMjz4MJsiQRYjrf4xAvqDjDyLu";
+        strSporkAddress = "CQQvAV6EsG8ZHtP5kdJ1GyNe5wmw3tfpU6";
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
