@@ -202,11 +202,11 @@ public:
 		std::cout << std::string("Calculating main genesis block...\n");
             arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
             uint256 hash;
-            genesis.nNonce = 0;
+            genesis.nNonce = 10000;
             while (UintToArith256(genesis.GetHash()) > hashTarget)
             {
                 ++genesis.nNonce;
-                printf("nonce %08X: hash = %s (target = %s)\n", genesis.nNonce, hash.ToString().c_str(), hashTarget.ToString().c_str());
+                printf("nonce %08X:\n hash = %s \n (target = %s)\n (nBits = %s)\n ___________________", genesis.nNonce, hash.ToString().c_str(), hashTarget.ToString().c_str(),genesis.nBits.ToString().c_str());
 
                 if (genesis.nNonce == 0)
                 {
@@ -338,7 +338,7 @@ public:
         nDefaultPort = 17532;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1553772616UL, 1325389UL, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1571380750UL, 1325389UL, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         // calculate testnet genesis block
         //consensus.hashGenesisBlock = uint256S("0x00");
