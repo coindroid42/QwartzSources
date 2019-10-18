@@ -124,7 +124,7 @@ public:
     CMainParams() {
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 225000999; 
-        consensus.nMasternodePaymentsStartBlock = 10000; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
+        consensus.nMasternodePaymentsStartBlock = 10; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
         consensus.nMasternodePaymentsIncreaseBlock = 158000; // actual historical value
         consensus.nMasternodePaymentsIncreasePeriod = 576*30; // 17280 - actual historical value
         consensus.nInstantSendConfirmationsRequired = 6;
@@ -140,9 +140,9 @@ public:
         consensus.nMasternodeMinimumConfirmations = 10;
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x0000061888b2184c2786d393ee8f5251c26c9e89f7b91706d59958cf977e406f");
-        consensus.BIP65Height = 10000; 
-        consensus.BIP66Height = 10000; 
-        consensus.DIP0001Height = 10000;
+        consensus.BIP65Height = 0; 
+        consensus.BIP66Height = 0; 
+        consensus.DIP0001Height = 0;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
         consensus.nPowTargetTimespan = 6 * 60;
         consensus.nPowTargetSpacing = 2 * 60;
