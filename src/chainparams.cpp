@@ -194,10 +194,10 @@ public:
         nDefaultPort = 7532;
         nPruneAfterHeight = 100000;
 
-     genesis = CreateGenesisBlock(1571427257, 434233, 0x1e0ffff0, 1, 50 * COIN);
+     genesis = CreateGenesisBlock(1571419306, 434233, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         // calculate main genesis block
-        //consensus.hashGenesisBlock = uint256S("0x00");
+        consensus.hashGenesisBlock = uint256S("0x00");
         if (true && (genesis.GetHash() != consensus.hashGenesisBlock)) {
 		std::cout << std::string("Calculating main genesis block...\n");
             arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
