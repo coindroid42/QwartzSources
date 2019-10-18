@@ -206,7 +206,7 @@ public:
             while (UintToArith256(genesis.GetHash()) > hashTarget)
             {
                 ++genesis.nNonce;
-                printf("nonce %08X:\n hash = %s \n (target = %s)\n (nBits = %s)\n ___________________", genesis.nNonce, hash.ToString().c_str(), hashTarget.ToString().c_str(),genesis.nBits.ToString().c_str());
+                //printf("nonce %08X:\n hash = %s \n (target = %s)\n (nBits = %s)\n ___________________", genesis.nNonce, hash.ToString().c_str(), hashTarget.ToString().c_str(),genesis.nBits.ToString().c_str());
 
                 if (genesis.nNonce == 0)
                 {
