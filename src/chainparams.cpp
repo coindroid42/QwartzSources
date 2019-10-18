@@ -70,7 +70,7 @@ static CBlock CreateDevNetGenesisBlock(const uint256 &prevBlockHash, const std::
  * transaction cannot be spent since it did not originally exist in the
  * database.
  *
- * CBlock(hash=00000ffd590b14, ver=1, hashPrevBlock=00000000000000, hashMerkleRoot=e0028e, nTime=1571417936, nBits=1e0ffff0, nNonce=684250, vtx=1)
+ * CBlock(hash=00000ffd590b14, ver=1, hashPrevBlock=00000000000000, hashMerkleRoot=e0028e, nTime=1571427257, nBits=1e0ffff0, nNonce=684250, vtx=1)
  *   CTransaction(hash=e0028e, ver=1, vin.size=1, vout.size=1, nLockTime=0)
  *     CTxIn(COutPoint(000000, -1), coinbase 04ffff001d01044c5957697265642030392f4a616e2f3230313420546865204772616e64204578706572696d656e7420476f6573204c6976653a204f76657273746f636b2e636f6d204973204e6f7720416363657074696e6720426974636f696e73)
  *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
@@ -194,7 +194,7 @@ public:
         nDefaultPort = 7532;
         nPruneAfterHeight = 100000;
 
-     genesis = CreateGenesisBlock(1571417936, 392226, 0x1e0ffff0, 1, 50 * COIN);
+     genesis = CreateGenesisBlock(1571427257, 392226, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         // calculate main genesis block
         consensus.hashGenesisBlock = uint256S("0x00");
@@ -202,7 +202,7 @@ public:
 		std::cout << std::string("Calculating main genesis block...\n");
             arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
             uint256 hash;
-            genesis.nNonce = 0;
+            genesis.nNonce = 10000;
             while (UintToArith256(genesis.GetHash()) > hashTarget)
             {
                 ++genesis.nNonce;
@@ -254,7 +254,7 @@ public:
         };
 
         chainTxData = ChainTxData{
-            1571417936, // * UNIX timestamp of last known number of transactions
+            1571427257, // * UNIX timestamp of last known number of transactions
             0,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0         // * estimated number of transactions per second after that timestamp
