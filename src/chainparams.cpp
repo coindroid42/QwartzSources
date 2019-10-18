@@ -139,7 +139,7 @@ public:
         consensus.nGovernanceFilterElements = 20000;
         consensus.nMasternodeMinimumConfirmations = 10;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x00000cbc316a4de8c8bf79dfa04bfe05d019866fce66d3d6708a1cc8df1e0d82");
+        consensus.BIP34Hash = uint256S("0x00000b1cbac4fec906043321181e2d5ec49ac01e8872fa8a0e3c8f66742dc82c");
         consensus.BIP65Height = 0; 
         consensus.BIP66Height = 0; 
         consensus.DIP0001Height = 0;
@@ -179,7 +179,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000200011"); 
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00000cbc316a4de8c8bf79dfa04bfe05d019866fce66d3d6708a1cc8df1e0d82"); 
+        consensus.defaultAssumeValid = uint256S("0x00000b1cbac4fec906043321181e2d5ec49ac01e8872fa8a0e3c8f66742dc82c"); 
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -196,29 +196,7 @@ public:
 
      genesis = CreateGenesisBlock(1571411111, 392226, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        // calculate main genesis block
-        //consensus.hashGenesisBlock = uint256S("0x00");
-        if (true && (genesis.GetHash() != consensus.hashGenesisBlock)) {
-		std::cout << std::string("Calculating main genesis block...\n");
-            arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
-            uint256 hash;
-            genesis.nNonce = 10000;
-            while (UintToArith256(genesis.GetHash()) > hashTarget)
-            {
-                ++genesis.nNonce;
-                //printf("nonce %08X:\n hash = %s \n (target = %s)\n (nBits = %s)\n ___________________", genesis.nNonce, hash.ToString().c_str(), hashTarget.ToString().c_str(),genesis.nBits.ToString().c_str());
 
-                if (genesis.nNonce == 0)
-                {
-                    ++genesis.nTime;
-                }
-            }
-            std::cout << "Genesis block found!\n";
-            std::cout << "nonce: " << genesis.nNonce << "\n";
-            std::cout << "time: " << genesis.nTime << "\n";
-            std::cout << "blockhash: " << genesis.GetHash().ToString().c_str() << "\n";
-            std::cout << "merklehash: " << genesis.hashMerkleRoot.ToString().c_str() << "\n";
-        }
         assert(consensus.hashGenesisBlock == uint256S("0x00000b1cbac4fec906043321181e2d5ec49ac01e8872fa8a0e3c8f66742dc82c"));
         assert(genesis.hashMerkleRoot == uint256S("0xfe4a1d6ca2e93f9aa9d3f86a799fa3b52b5b39a69e984c7dae8e909343c75009"));
 
