@@ -139,7 +139,7 @@ public:
         consensus.nGovernanceFilterElements = 20000;
         consensus.nMasternodeMinimumConfirmations = 10;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x00000b1cbac4fec906043321181e2d5ec49ac01e8872fa8a0e3c8f66742dc82c");
+        consensus.BIP34Hash = uint256S("0x00000afa8aae1c42a757d34800e11b746edafb67a4c819b7590733e7eddf2e7f");
         consensus.BIP65Height = 0; 
         consensus.BIP66Height = 0; 
         consensus.DIP0001Height = 0;
@@ -179,7 +179,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000200011"); 
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00000b1cbac4fec906043321181e2d5ec49ac01e8872fa8a0e3c8f66742dc82c"); 
+        consensus.defaultAssumeValid = uint256S("0x00000afa8aae1c42a757d34800e11b746edafb67a4c819b7590733e7eddf2e7f"); 
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -194,7 +194,7 @@ public:
         nDefaultPort = 7532;
         nPruneAfterHeight = 100000;
 
-     genesis = CreateGenesisBlock(1571427257, 392226, 0x1e0ffff0, 1, 50 * COIN);
+     genesis = CreateGenesisBlock(1571427257, 434233, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         // calculate main genesis block
         consensus.hashGenesisBlock = uint256S("0x00");
@@ -217,7 +217,7 @@ public:
             std::cout << "blockhash: " << genesis.GetHash().ToString().c_str() << "\n";
             std::cout << "merklehash: " << genesis.hashMerkleRoot.ToString().c_str() << "\n";
         }
-        assert(consensus.hashGenesisBlock == uint256S("0x00000b1cbac4fec906043321181e2d5ec49ac01e8872fa8a0e3c8f66742dc82c"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000afa8aae1c42a757d34800e11b746edafb67a4c819b7590733e7eddf2e7f"));
         assert(genesis.hashMerkleRoot == uint256S("0xfe4a1d6ca2e93f9aa9d3f86a799fa3b52b5b39a69e984c7dae8e909343c75009"));
 
 
@@ -250,7 +250,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  0, uint256S("0x00000b1cbac4fec906043321181e2d5ec49ac01e8872fa8a0e3c8f66742dc82c"))
+            (  0, uint256S("0x00000afa8aae1c42a757d34800e11b746edafb67a4c819b7590733e7eddf2e7f"))
         };
 
         chainTxData = ChainTxData{
