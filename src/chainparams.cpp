@@ -138,14 +138,14 @@ public:
         consensus.nGovernanceMinQuorum = 10;
         consensus.nGovernanceFilterElements = 20000;
         consensus.nMasternodeMinimumConfirmations = 10;
-        consensus.BIP34Height = 10000;
+        consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x0000061888b2184c2786d393ee8f5251c26c9e89f7b91706d59958cf977e406f");
         consensus.BIP65Height = 10000; 
         consensus.BIP66Height = 10000; 
         consensus.DIP0001Height = 10000;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
         consensus.nPowTargetTimespan = 6 * 60;
-        consensus.nPowTargetSpacing = 2 * 60;
+        consensus.nPowTargetSpacing = 6 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 100;
