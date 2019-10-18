@@ -276,10 +276,10 @@ public:
         consensus.nMasternodePaymentsIncreasePeriod = 10;
         consensus.nInstantSendConfirmationsRequired = 2;
         consensus.nInstantSendKeepLock = 6;
-        consensus.nBudgetPaymentsStartBlock = 4100;
+        consensus.nBudgetPaymentsStartBlock = 9999994100;
         consensus.nBudgetPaymentsCycleBlocks = 50;
         consensus.nBudgetPaymentsWindowBlocks = 10;
-        consensus.nSuperblockStartBlock = 4200; // NOTE: Should satisfy nSuperblockStartBlock > nBudgetPeymentsStartBlock
+        consensus.nSuperblockStartBlock = 9994200; // NOTE: Should satisfy nSuperblockStartBlock > nBudgetPeymentsStartBlock
         consensus.nSuperblockStartHash = uint256S("00000000cffabc0f646867fba0550afd6e30e0f4b0fc54e34d3e101a1552df5d");
         consensus.nSuperblockCycle = 24; // Superblocks can be issued hourly on testnet
         consensus.nGovernanceMinQuorum = 1;
@@ -287,12 +287,12 @@ public:
         consensus.nMasternodeMinimumConfirmations = 1;
         consensus.BIP34Height = 10000;
         consensus.BIP34Hash = uint256S("0x0000049f3eef5f1bf93ac309ed7c807878566d88c4f7b6a4c460a99466eeb57d");
-        consensus.BIP65Height = 0; 
-        consensus.BIP66Height = 0; 
-        consensus.DIP0001Height = 0;
+        consensus.BIP65Height = 9999990; 
+        consensus.BIP66Height = 9999990; 
+        consensus.DIP0001Height = 9999990;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
         consensus.nPowTargetTimespan = 6 * 60;
-        consensus.nPowTargetSpacing = 2 * 60;
+        consensus.nPowTargetSpacing = 6 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 4001; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
@@ -300,24 +300,24 @@ public:
         consensus.nRuleChangeActivationThreshold = 2; // 75% for testchains
         consensus.nMinerConfirmationWindow = 3; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1799145601; 
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; 
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1506556800; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1706556800; 
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 9999999999; 
 
         // Deployment of DIP0001
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1505692800; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1705692800; 
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 9999999999; 
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nWindowSize = 3;
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 2; 
 
         // Deployment of BIP147
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].bit = 2;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 1517792400; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 1717792400; 
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 9999999999; 
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nWindowSize = 3;
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nThreshold = 2; 
