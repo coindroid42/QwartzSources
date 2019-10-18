@@ -197,7 +197,7 @@ public:
         genesis = CreateGenesisBlock(1553772611, 684250, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         // calculate main genesis block
-        //consensus.hashGenesisBlock = uint256S("0x00");
+        consensus.hashGenesisBlock = uint256S("0x00");
         if (true && (genesis.GetHash() != consensus.hashGenesisBlock)) {
 		std::cout << std::string("Calculating main genesis block...\n");
             arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
@@ -217,8 +217,8 @@ public:
             std::cout << "blockhash: " << genesis.GetHash().ToString().c_str() << "\n";
             std::cout << "merklehash: " << genesis.hashMerkleRoot.ToString().c_str() << "\n";
         }
-        assert(consensus.hashGenesisBlock == uint256S("0x00000cbc316a4de8c8bf79dfa04bfe05d019866fce66d3d6708a1cc8df1e0d81"));
-        assert(genesis.hashMerkleRoot == uint256S("0xfe4a1d6ca2e93f9aa9d3f86a799fa3b52b5b39a69e984c7dae8e909343c75001"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000cbc316a4de8c8bf79dfa04bfe05d019866fce66d3d6708a1cc8df1e0d82"));
+        assert(genesis.hashMerkleRoot == uint256S("0xfe4a1d6ca2e93f9aa9d3f86a799fa3b52b5b39a69e984c7dae8e909343c75009"));
 
 
         vSeeds.push_back(CDNSSeedData("walletbuilders.com", "node1.walletbuilders.com"));
