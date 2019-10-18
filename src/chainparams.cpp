@@ -217,8 +217,8 @@ public:
             std::cout << "blockhash: " << genesis.GetHash().ToString().c_str() << "\n";
             std::cout << "merklehash: " << genesis.hashMerkleRoot.ToString().c_str() << "\n";
         }
-        assert(consensus.hashGenesisBlock == uint256S("0x"));
-        assert(genesis.hashMerkleRoot == uint256S("0x"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000cbc316a4de8c8bf79dfa04bfe05d019866fce66d3d6708a1cc8df1e0d81"));
+        assert(genesis.hashMerkleRoot == uint256S("0xfe4a1d6ca2e93f9aa9d3f86a799fa3b52b5b39a69e984c7dae8e909343c75001"));
 
 
         vSeeds.push_back(CDNSSeedData("walletbuilders.com", "node1.walletbuilders.com"));
