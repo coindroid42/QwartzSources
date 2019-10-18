@@ -123,7 +123,7 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 225000; 
+        consensus.nSubsidyHalvingInterval = 225000;
         consensus.nMasternodePaymentsStartBlock = 10; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
         consensus.nMasternodePaymentsIncreaseBlock = 158000; // actual historical value
         consensus.nMasternodePaymentsIncreasePeriod = 576*30; // 17280 - actual historical value
@@ -132,7 +132,7 @@ public:
         consensus.nBudgetPaymentsStartBlock = 328008; // actual historical value
         consensus.nBudgetPaymentsCycleBlocks = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         consensus.nBudgetPaymentsWindowBlocks = 100;
-        consensus.nSuperblockStartBlock = 614820; 
+        consensus.nSuperblockStartBlock = 614820;
         consensus.nSuperblockStartHash = uint256();
         consensus.nSuperblockCycle = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         consensus.nGovernanceMinQuorum = 10;
@@ -140,8 +140,8 @@ public:
         consensus.nMasternodeMinimumConfirmations = 10;
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x00000cbc316a4de8c8bf79dfa04bfe05d019866fce66d3d6708a1cc8df1e0d82");
-        consensus.BIP65Height = 0; 
-        consensus.BIP66Height = 0; 
+        consensus.BIP65Height = 0;
+        consensus.BIP66Height = 0;
         consensus.DIP0001Height = 0;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
         consensus.nPowTargetTimespan = 6 * 60;
@@ -153,33 +153,33 @@ public:
         consensus.nRuleChangeActivationThreshold = 3; // 95% of 3
         consensus.nMinerConfirmationWindow = 3; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; 
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601;
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999;
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1486252800; 
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 9999999999; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1486252800;
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 9999999999;
 
         // Deployment of DIP0001
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1508025600; 
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 9999999999; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1508025600;
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 9999999999;
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nWindowSize = 3;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 2; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 2;
 
         // Deployment of BIP147
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].bit = 2;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 1524477600; 
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 9999999999; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 1524477600;
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 9999999999;
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nWindowSize = 3;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nThreshold = 2; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nThreshold = 2;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000200011"); 
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000200011");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00000cbc316a4de8c8bf79dfa04bfe05d019866fce66d3d6708a1cc8df1e0d82"); 
+        consensus.defaultAssumeValid = uint256S("0x00000cbc316a4de8c8bf79dfa04bfe05d019866fce66d3d6708a1cc8df1e0d82");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -217,8 +217,8 @@ public:
             std::cout << "blockhash: " << genesis.GetHash().ToString().c_str() << "\n";
             std::cout << "merklehash: " << genesis.hashMerkleRoot.ToString().c_str() << "\n";
         }
-        assert(consensus.hashGenesisBlock == uint256S("0x00000cbc316a4de8c8bf79dfa04bfe05d019866fce66d3d6708a1cc8df1e0d82"));
-        assert(genesis.hashMerkleRoot == uint256S("0xfe4a1d6ca2e93f9aa9d3f86a799fa3b52b5b39a69e984c7dae8e909343c75009"));
+        assert(consensus.hashGenesisBlock == uint256S("0x"));
+        assert(genesis.hashMerkleRoot == uint256S("0x"));
 
 
         vSeeds.push_back(CDNSSeedData("walletbuilders.com", "node1.walletbuilders.com"));
@@ -287,8 +287,8 @@ public:
         consensus.nMasternodeMinimumConfirmations = 1;
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x0000049f3eef5f1bf93ac309ed7c807878566d88c4f7b6a4c460a99466eeb57d");
-        consensus.BIP65Height = 0; 
-        consensus.BIP66Height = 0; 
+        consensus.BIP65Height = 0;
+        consensus.BIP66Height = 0;
         consensus.DIP0001Height = 0;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
         consensus.nPowTargetTimespan = 6 * 60;
@@ -300,33 +300,33 @@ public:
         consensus.nRuleChangeActivationThreshold = 2; // 75% for testchains
         consensus.nMinerConfirmationWindow = 3; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; 
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601;
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999;
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1506556800; 
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 9999999999; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1506556800;
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 9999999999;
 
         // Deployment of DIP0001
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1505692800; 
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 9999999999; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1505692800;
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 9999999999;
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nWindowSize = 3;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 2; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 2;
 
         // Deployment of BIP147
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].bit = 2;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 1517792400; 
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 9999999999; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 1517792400;
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 9999999999;
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nWindowSize = 3;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nThreshold = 2; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nThreshold = 2;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000200011"); 
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000200011");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0000049f3eef5f1bf93ac309ed7c807878566d88c4f7b6a4c460a99466eeb57d"); 
+        consensus.defaultAssumeValid = uint256S("0x0000049f3eef5f1bf93ac309ed7c807878566d88c4f7b6a4c460a99466eeb57d");
 
         pchMessageStart[0] = 0x7e;
         pchMessageStart[1] = 0x8f;
@@ -394,7 +394,7 @@ public:
             (    0, uint256S("0x0000049f3eef5f1bf93ac309ed7c807878566d88c4f7b6a4c460a99466eeb57d"))
         };
 
-        chainTxData = ChainTxData{        
+        chainTxData = ChainTxData{
             1553772616, // * UNIX timestamp of last known number of transactions
             0,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
@@ -441,27 +441,27 @@ public:
         consensus.nRuleChangeActivationThreshold = 2; // 75% for testchains
         consensus.nMinerConfirmationWindow = 3; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; 
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601;
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999;
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1506556800; 
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 9999999999; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1506556800;
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 9999999999;
 
         // Deployment of DIP0001
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1505692800; 
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 9999999999; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1505692800;
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 9999999999;
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nWindowSize = 3;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 2; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 2;
 
         // Deployment of BIP147
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].bit = 2;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 1517792400; 
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 9999999999; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 1517792400;
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 9999999999;
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nWindowSize = 3;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nThreshold = 2; 
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nThreshold = 2;
 
         // The best chain should have at least this much work.
         consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000000000000");
@@ -572,7 +572,7 @@ public:
         consensus.nGovernanceMinQuorum = 1;
         consensus.nGovernanceFilterElements = 100;
         consensus.nMasternodeMinimumConfirmations = 1;
-        consensus.BIP34Height = 0; // BIP34 has not activated on regtest 
+        consensus.BIP34Height = 0; // BIP34 has not activated on regtest
         consensus.BIP34Hash = uint256();
         consensus.BIP65Height = 0; // BIP65 activated on regtest (Used in rpc activation tests)
         consensus.BIP66Height = 0; // BIP66 activated on regtest (Used in rpc activation tests)
