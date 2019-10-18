@@ -194,7 +194,7 @@ public:
         nDefaultPort = 7532;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1571412832, 431650, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1571411111, 392226, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         // calculate main genesis block
         //consensus.hashGenesisBlock = uint256S("0x00");
@@ -219,7 +219,7 @@ public:
             std::cout << "blockhash: " << genesis.GetHash().ToString().c_str() << "\n";
             std::cout << "merklehash: " << genesis.hashMerkleRoot.ToString().c_str() << "\n";
         }
-        assert(consensus.hashGenesisBlock == uint256S("0x00000fdc96ffc6fd9683c9035e70472b2fb206569202410596f1a16d17d733ec"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000b1cbac4fec906043321181e2d5ec49ac01e8872fa8a0e3c8f66742dc82c"));
         assert(genesis.hashMerkleRoot == uint256S("0xfe4a1d6ca2e93f9aa9d3f86a799fa3b52b5b39a69e984c7dae8e909343c75009"));
 
 
