@@ -151,7 +151,7 @@ public:
         consensus.nPowKGWHeight = 100;
         consensus.nPowDGWHeight = 100;
         consensus.nRuleChangeActivationThreshold = 3; // 95% of 3
-        consensus.nMinerConfirmationWindow = 3; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nMinerConfirmationWindow = 50; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; 
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; 
